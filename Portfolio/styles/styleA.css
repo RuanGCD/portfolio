@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+*{
+    margin: 0%;
+}
+body{
+    background-color: black;
+    color:white;
+}
+header{
+    padding: 2% 0 0 40%;
+     font-family: "Oswald", serif;
+}
+.cabeçalho__link{
+    display: flex;
+    gap: 50px;
+}
+.cabeçalho__link__link{
+    text-decoration: none;
+    color:rgb(3, 207, 105) ;
+}
+main{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    padding: 5% 10%;
+}
+h2{
+    color: rgb(3, 207, 105);
+}
+strong{
+    color: rgb(165, 165, 165);
+}
+.parte-escrita{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.parte-escrita__titulo{
+    font-family: "Oswald", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+li{
+    color:rgb(165, 165, 165);
+    margin:0 -2%;
+}
