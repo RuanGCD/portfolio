@@ -42,7 +42,7 @@ main{
     font-size: 2.25rem;
     font-family: "Edu AU VIC WA NT Arrows", serif;
     font-optical-sizing: auto;
-    font-weight: <weight>;
+    font-weight: 600px;
     font-style: normal;
 }
 .parte-escrita__paragrafo{
@@ -56,12 +56,60 @@ span{
 .parte-escrita__subtitulo{
     text-align: center;
 }
-.foto{
-    width: 250px;
-    height: 250px;
-    border: 0.125rem solid rgb(3, 207, 105);
+.foto-container {
+    position: relative;
+    width: 270px; /* ligeiramente maior */
+    height: 270px;
     border-radius: 0.625rem;
+    overflow: hidden;
+    padding: 10px; /* espaço para o brilho aparecer */
+    box-sizing: border-box;
 }
+
+.foto {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.625rem;
+    display: block;
+    position: relative;
+    z-index: 2;
+}
+
+
+.foto-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.625rem;
+    background: conic-gradient(
+        from 0deg,
+        transparent 0deg,
+        rgb(3, 207, 105) 90deg,
+        transparent 180deg,
+        rgb(3, 207, 105) 270deg,
+        transparent 360deg
+    );
+    animation: glow-move 4s linear infinite;
+    z-index: 1;
+    filter: blur(4px);
+    mask-image: linear-gradient(#000 0 0);
+    -webkit-mask-image: linear-gradient(#000 0 0);
+    pointer-events: none;
+}
+@keyframes glow-move {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
 .parte-escrita__links{
     display: flex;
     justify-content: space-between;
@@ -83,8 +131,17 @@ span{
     font-size: 1.25rem;
 }
 .parte-escrita__links__link:hover{
+    
     background-color: rgb(70, 70, 70);
+    border-color: rgb(3, 207, 105);
+    box-shadow: 0 0 10px rgb(3, 207, 105),
+                0 0 20px rgb(3, 207, 105),
+                0 0 30px rgb(3, 207, 105),
+                0 0 40px rgb(3, 207, 105);
+    transition: box-shadow 0.3s ease-in-out;
 }
+
+
 .parte-escrita__links__link__imagem{
     width: 1.25rem;
     height: 1.25rem;
