@@ -21,10 +21,28 @@ header{
     display: flex;
     gap: 5rem;
 }
-.cabeçalho__link__link{
+
+.cabeçalho__link__link {
+    position: relative;
     color: rgb(3, 207, 105);
     text-decoration: none;
 }
+
+.cabeçalho__link__link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background-color: rgb(3, 207, 105);
+    transition: width 0.3s ease-in-out;
+}
+
+.cabeçalho__link__link:hover::after {
+    width: 100%;
+}
+
 main{
     display: flex;
     height: 100%;
@@ -56,13 +74,35 @@ span{
 .parte-escrita__subtitulo{
     text-align: center;
 }
+.digitando {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid rgb(3, 207, 105); 
+    animation: digitar 3s steps(28, end), piscar 0.75s step-end infinite;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+    color: white;
+}
+
+@keyframes digitar {
+    from { width: 0; }
+    to { width: 28ch; } 
+}
+
+
+@keyframes piscar {
+    0%, 100% { border-color: rgb(3, 207, 105); }
+    50% { border-color: transparent; }
+}
+
 .foto-container {
     position: relative;
-    width: 270px; /* ligeiramente maior */
+    width: 270px; 
     height: 270px;
     border-radius: 0.625rem;
     overflow: hidden;
-    padding: 10px; /* espaço para o brilho aparecer */
+    padding: 10px;
     box-sizing: border-box;
 }
 
