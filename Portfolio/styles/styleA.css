@@ -10,16 +10,37 @@ body{
     color:white;
 }
 header{
-    padding: 2% 0 0 40%;
-     font-family: "Oswald", serif;
+    font-size: 1.125rem;
+    padding: 2% 0 0 41%;
+    font-weight: 500;
+    font-family: 'Times New Roman', Times, serif;
+    height:5%;
+
 }
 .cabeçalho__link{
     display: flex;
-    gap: 50px;
+    gap: 5rem;
 }
-.cabeçalho__link__link{
+
+.cabeçalho__link__link {
+    position: relative;
+    color: rgb(3, 207, 105);
     text-decoration: none;
-    color:rgb(3, 207, 105) ;
+}
+
+.cabeçalho__link__link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background-color: rgb(3, 207, 105);
+    transition: width 0.3s ease-in-out;
+}
+
+.cabeçalho__link__link:hover::after {
+    width: 100%;
 }
 main{
     display: flex;
@@ -139,10 +160,10 @@ li{
   }
 
   .cabeçalho__link {
-    flex-direction: row; /* mantém horizontal */
-    justify-content: center; /* centraliza o menu */
-    gap: 15px; /* espaçamento menor entre os links */
-    flex-wrap: wrap; /* permite quebra se a tela for muito estreita */
+    flex-direction: row; 
+    justify-content: center; 
+    gap: 15px; 
+    flex-wrap: wrap; 
   }
 
   .cabeçalho__link__link {
