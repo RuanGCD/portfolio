@@ -1,0 +1,122 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+    background-color: black;
+    margin: 0;
+    color: white;
+}
+header{
+    font-size: 1.125rem;
+    padding: 2% 0 0 41%;
+    font-weight: 500;
+    font-family: 'Times New Roman', Times, serif;
+    height:5%;
+
+}
+.cabeçalho__link{
+    display: flex;
+    gap: 5rem;
+}
+
+.cabeçalho__link__link {
+    position: relative;
+    color: rgb(3, 207, 105);
+    text-decoration: none;
+}
+
+.cabeçalho__link__link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background-color: rgb(3, 207, 105);
+    transition: width 0.3s ease-in-out;
+}
+
+.cabeçalho__link__link:hover::after {
+    width: 100%;
+}
+
+main {
+    flex: 1; 
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+}
+button{
+    background: transparent;
+    color: rgb(3, 207, 105);
+    border: 1px solid rgb(3, 207, 105);
+    padding: 10px;
+    cursor: pointer;
+}
+.projeto-card{
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    text-align: center;
+    width: 80%;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.galeria-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.projeto-foto-ativa {
+    width: 500px; 
+    height: 1000px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid rgb(3, 207, 105);
+}
+.btn-foto:hover{
+    transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 255, 153, 0.3);
+}
+.projeto-botao{
+    text-decoration: none;
+    color: white;
+    font-size: 40px;
+}
+@media (max-width: 1200px) {
+    /* Ajusta o header para ficar centralizado e menor */
+    header {
+        padding: 5% 0;
+        height: auto;
+    }
+    .cabeçalho__link {
+        gap: 1.5rem;
+        justify-content: center;
+    }
+
+    /* Diminui o card e remove margens excessivas */
+    .projeto-card {
+        width: 95%;
+        padding: 10px;
+    }
+
+    /* Redimensiona a foto para caber na tela do celular */
+    .projeto-foto-ativa {
+        width: 250px;  /* Ajustado para telas menores */
+        height: 450px; /* Ajustado proporcionalmente */
+    }
+
+    /* Diminui o texto e botões para não quebrar o layout */
+    .projeto-botao {
+        font-size: 1.5rem;
+    }
+
+    .nav-projeto button {
+        padding: 5px;
+        font-size: 0.8rem;
+    }
+}

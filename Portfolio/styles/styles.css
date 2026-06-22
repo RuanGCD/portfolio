@@ -4,10 +4,12 @@
     margin: 0%;
     padding: 0%;
 }
-body{
-    height: 100%;
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
     background-color: black;
-    gap: 10%;
+    margin: 0;
 }
 header{
     font-size: 1.125rem;
@@ -45,7 +47,7 @@ header{
 
 main{
     display: flex;
-    height: 100%;
+    flex: 1;
     justify-content: space-between;
     align-items: center;
     padding: 5% 15%;
